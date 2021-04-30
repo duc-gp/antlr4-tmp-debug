@@ -4,26 +4,26 @@ import antlr4 from 'antlr4';
 import SearchGrammar2Listener from './SearchGrammar2Listener.js';
 
 const serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786",
-    "\u5964\u0003\u0006\u001e\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004",
+    "\u5964\u0003\u0007\u001e\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004",
     "\u0004\t\u0004\u0003\u0002\u0005\u0002\n\n\u0002\u0003\u0002\u0003\u0002",
     "\u0003\u0003\u0003\u0003\u0003\u0004\u0003\u0004\u0006\u0004\u0012\n",
     "\u0004\r\u0004\u000e\u0004\u0013\u0003\u0004\u0003\u0004\u0003\u0004",
     "\u0007\u0004\u0019\n\u0004\f\u0004\u000e\u0004\u001c\u000b\u0004\u0003",
-    "\u0004\u0002\u0003\u0006\u0005\u0002\u0004\u0006\u0002\u0002\u0002\u001d",
-    "\u0002\t\u0003\u0002\u0002\u0002\u0004\r\u0003\u0002\u0002\u0002\u0006",
-    "\u000f\u0003\u0002\u0002\u0002\b\n\u0005\u0004\u0003\u0002\t\b\u0003",
-    "\u0002\u0002\u0002\t\n\u0003\u0002\u0002\u0002\n\u000b\u0003\u0002\u0002",
-    "\u0002\u000b\f\u0007\u0002\u0002\u0003\f\u0003\u0003\u0002\u0002\u0002",
-    "\r\u000e\u0005\u0006\u0004\u0002\u000e\u0005\u0003\u0002\u0002\u0002",
-    "\u000f\u0011\b\u0004\u0001\u0002\u0010\u0012\u0007\u0006\u0002\u0002",
-    "\u0011\u0010\u0003\u0002\u0002\u0002\u0012\u0013\u0003\u0002\u0002\u0002",
-    "\u0013\u0011\u0003\u0002\u0002\u0002\u0013\u0014\u0003\u0002\u0002\u0002",
-    "\u0014\u001a\u0003\u0002\u0002\u0002\u0015\u0016\f\u0004\u0002\u0002",
-    "\u0016\u0017\u0007\u0003\u0002\u0002\u0017\u0019\u0007\u0004\u0002\u0002",
-    "\u0018\u0015\u0003\u0002\u0002\u0002\u0019\u001c\u0003\u0002\u0002\u0002",
-    "\u001a\u0018\u0003\u0002\u0002\u0002\u001a\u001b\u0003\u0002\u0002\u0002",
-    "\u001b\u0007\u0003\u0002\u0002\u0002\u001c\u001a\u0003\u0002\u0002\u0002",
-    "\u0005\t\u0013\u001a"].join("");
+    "\u0004\u0002\u0003\u0006\u0005\u0002\u0004\u0006\u0002\u0003\u0004\u0002",
+    "\u0004\u0004\u0006\u0006\u0002\u001d\u0002\t\u0003\u0002\u0002\u0002",
+    "\u0004\r\u0003\u0002\u0002\u0002\u0006\u000f\u0003\u0002\u0002\u0002",
+    "\b\n\u0005\u0004\u0003\u0002\t\b\u0003\u0002\u0002\u0002\t\n\u0003\u0002",
+    "\u0002\u0002\n\u000b\u0003\u0002\u0002\u0002\u000b\f\u0007\u0002\u0002",
+    "\u0003\f\u0003\u0003\u0002\u0002\u0002\r\u000e\u0005\u0006\u0004\u0002",
+    "\u000e\u0005\u0003\u0002\u0002\u0002\u000f\u0011\b\u0004\u0001\u0002",
+    "\u0010\u0012\t\u0002\u0002\u0002\u0011\u0010\u0003\u0002\u0002\u0002",
+    "\u0012\u0013\u0003\u0002\u0002\u0002\u0013\u0011\u0003\u0002\u0002\u0002",
+    "\u0013\u0014\u0003\u0002\u0002\u0002\u0014\u001a\u0003\u0002\u0002\u0002",
+    "\u0015\u0016\f\u0004\u0002\u0002\u0016\u0017\u0007\u0003\u0002\u0002",
+    "\u0017\u0019\u0007\u0004\u0002\u0002\u0018\u0015\u0003\u0002\u0002\u0002",
+    "\u0019\u001c\u0003\u0002\u0002\u0002\u001a\u0018\u0003\u0002\u0002\u0002",
+    "\u001a\u001b\u0003\u0002\u0002\u0002\u001b\u0007\u0003\u0002\u0002\u0002",
+    "\u001c\u001a\u0003\u0002\u0002\u0002\u0005\t\u0013\u001a"].join("");
 
 
 const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -36,7 +36,8 @@ export default class SearchGrammar2Parser extends antlr4.Parser {
 
     static grammarFileName = "SearchGrammar2.g4";
     static literalNames = [ null, "'^'" ];
-    static symbolicNames = [ null, "WEIGHT", "DEC_NUMBER", "NUMBER", "PhraseLiteral" ];
+    static symbolicNames = [ null, "WEIGHT", "DEC_NUMBER", "NUMBER", "PhraseLiteral", 
+                             "SKIP_RULE" ];
     static ruleNames = [ "root", "general_expr", "bool_expr" ];
 
     constructor(input) {
@@ -81,7 +82,7 @@ export default class SearchGrammar2Parser extends antlr4.Parser {
 	        this.state = 7;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        if(_la===SearchGrammar2Parser.PhraseLiteral) {
+	        if(_la===SearchGrammar2Parser.DEC_NUMBER || _la===SearchGrammar2Parser.PhraseLiteral) {
 	            this.state = 6;
 	            this.general_expr();
 	        }
@@ -136,6 +137,7 @@ export default class SearchGrammar2Parser extends antlr4.Parser {
 	    let _prevctx = localctx;
 	    const _startState = 4;
 	    this.enterRecursionRule(localctx, 4, SearchGrammar2Parser.RULE_bool_expr, _p);
+	    var _la = 0; // Token type
 	    try {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 15; 
@@ -145,7 +147,14 @@ export default class SearchGrammar2Parser extends antlr4.Parser {
 	        	switch (_alt) {
 	        	case 1:
 	        		this.state = 14;
-	        		this.match(SearchGrammar2Parser.PhraseLiteral);
+	        		_la = this._input.LA(1);
+	        		if(!(_la===SearchGrammar2Parser.DEC_NUMBER || _la===SearchGrammar2Parser.PhraseLiteral)) {
+	        		this._errHandler.recoverInline(this);
+	        		}
+	        		else {
+	        			this._errHandler.reportMatch(this);
+	        		    this.consume();
+	        		}
 	        		break;
 	        	default:
 	        		throw new antlr4.error.NoViableAltException(this);
@@ -202,6 +211,7 @@ SearchGrammar2Parser.WEIGHT = 1;
 SearchGrammar2Parser.DEC_NUMBER = 2;
 SearchGrammar2Parser.NUMBER = 3;
 SearchGrammar2Parser.PhraseLiteral = 4;
+SearchGrammar2Parser.SKIP_RULE = 5;
 
 SearchGrammar2Parser.RULE_root = 0;
 SearchGrammar2Parser.RULE_general_expr = 1;
@@ -307,16 +317,24 @@ class Bool_exprContext extends antlr4.ParserRuleContext {
 	};
 
 
+	DEC_NUMBER = function(i) {
+		if(i===undefined) {
+			i = null;
+		}
+	    if(i===null) {
+	        return this.getTokens(SearchGrammar2Parser.DEC_NUMBER);
+	    } else {
+	        return this.getToken(SearchGrammar2Parser.DEC_NUMBER, i);
+	    }
+	};
+
+
 	bool_expr() {
 	    return this.getTypedRuleContext(Bool_exprContext,0);
 	};
 
 	WEIGHT() {
 	    return this.getToken(SearchGrammar2Parser.WEIGHT, 0);
-	};
-
-	DEC_NUMBER() {
-	    return this.getToken(SearchGrammar2Parser.DEC_NUMBER, 0);
 	};
 
 	enterRule(listener) {
