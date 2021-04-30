@@ -41,7 +41,7 @@ function main(input) {
   console.log(tree);
 }
 
-main('foobar')
+main('foobar^4')
 
 ReactDOM.render(
   <React.StrictMode>
