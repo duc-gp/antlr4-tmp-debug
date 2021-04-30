@@ -2,4 +2,5 @@ WEIGHT=1
 DEC_NUMBER=2
 NUMBER=3
 PhraseLiteral=4
+SKIP_RULE=5
 '^'=1
